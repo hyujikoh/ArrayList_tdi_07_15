@@ -80,4 +80,10 @@ public class Apptest {
 
         assertEquals(300, al.get(1));
     }
+    @Test
+    void 최초에_배열의_크기는_2_이다() {
+        ArrayList al = new ArrayList();
+
+        assertEquals(2, al.getArrayLength());
+    }
 }

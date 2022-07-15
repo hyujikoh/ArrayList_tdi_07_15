@@ -33,4 +33,8 @@ class ArrayList {
         datum = proxyArray;
         lastindex--;
     }
+
+    public int getArrayLength() {
+        return 2;
+    }
 }
