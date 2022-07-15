@@ -22,5 +22,6 @@ class ArrayList {
     }
 
     public void removeAt(int i) {
+        lastindex--;
     }
 }
