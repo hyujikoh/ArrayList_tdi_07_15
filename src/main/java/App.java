@@ -6,7 +6,12 @@ public class App {
 }
 class ArrayList {
     int lastindex = -1;
+    int[] datum = new int[2];
     int size(){
         return 0;
+    }
+    void add(int element){
+        lastindex++;
+        datum[lastindex] = element;
     }
 }
