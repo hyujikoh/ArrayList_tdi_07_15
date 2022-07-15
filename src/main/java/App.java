@@ -6,7 +6,7 @@ public class App {
 }
 class ArrayList {
     int lastindex = -1;
-    int[] datum = new int[3];
+    int[] datum = new int[2];
 
 
     int size(){
@@ -15,8 +15,22 @@ class ArrayList {
     }
     void add(int element){
         lastindex++;
+        if (lastindex==datum.length){
+            datum = increaseSize(datum);
+        }
+
         datum[lastindex] = element;
+
     }
+
+    private int[] increaseSize(int[] datum) {
+        int[] newArr = new int[datum.length*2];
+        for(int i = 0; i < datum.length; i++){
+            newArr[i] = datum[i];
+        }
+        return newArr;
+     }
+
     int get(int index){
         return datum[index];
     }
@@ -35,6 +49,6 @@ class ArrayList {
     }
 
     public int getArrayLength() {
-        return 2;
+        return datum.length;
     }
 }
