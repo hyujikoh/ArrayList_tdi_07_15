@@ -7,11 +7,18 @@ public class App {
 class ArrayList {
     int lastindex = -1;
     int[] datum = new int[2];
+
+
     int size(){
-        return 0;
+        int length = lastindex+1;
+        return length;
     }
     void add(int element){
         lastindex++;
         datum[lastindex] = element;
     }
+    int get(int index){
+        return datum[index];
+    }
+
 }
