@@ -21,7 +21,16 @@ class ArrayList {
         return datum[index];
     }
 
-    public void removeAt(int i) {
+    public void removeAt(int index) {
+        int[] proxyArray = new int[datum.length - 1];
+        for(int i=0,k=0;i<datum.length;i++){
+            if(i==index){
+                continue;
+            }
+            proxyArray[k] = datum[i];
+            k++;
+        }
+        datum = proxyArray;
         lastindex--;
     }
 }
