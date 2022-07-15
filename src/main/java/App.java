@@ -22,6 +22,31 @@ class ArrayList {
         datum[lastindex] = element;
 
     }
+    void add(int element,int index){
+        lastindex++;
+        if (lastindex==datum.length){
+            datum = increaseSize(datum);
+        }
+
+        if(datum[index]== 0){
+            datum[index] = element;
+        }
+        if(datum[index]!= 0){
+            int[] proxyArray = new int[datum.length + 1];
+            for(int i =0,k=0; i<proxyArray.length;i++ ){
+                if(i==index){
+                    proxyArray[i] =element;
+                }
+                if(i!=index){
+                    proxyArray[i]= datum[k];
+                    k++;
+                }
+            }
+            datum = proxyArray;
+        }
+
+
+    }
 
     private int[] increaseSize(int[] datum) {
         int[] newArr = new int[datum.length*2];

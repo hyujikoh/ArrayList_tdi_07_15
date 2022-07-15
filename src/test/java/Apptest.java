@@ -119,5 +119,28 @@ public class Apptest {
         assertTrue(rs.contains("1 : 200"));
         assertTrue(rs.contains("2 : 30"));
     }
+    @Test
+    void 끼어넣기() {
+        ArrayList al = new ArrayList();
+        al.add(1000);
+        al.add(200);
+        al.add(30);
+        al.add(700, 1);
+        al.add(750, 1);
+        ByteArrayOutputStream output = TestUtil.setOutToByteArray();
+
+        al.showAllValues();
+
+        String rs = output.toString();
+
+        TestUtil.clearSetOutToByteArray(output);
+
+        assertTrue(rs.contains("== 전체 데이터 출력 =="));
+        assertTrue(rs.contains("0 : 1000"));
+        assertTrue(rs.contains("1 : 750"));
+        assertTrue(rs.contains("2 : 700"));
+        assertTrue(rs.contains("3 : 200"));
+        assertTrue(rs.contains("4 : 30"));
+    }
 
 }
