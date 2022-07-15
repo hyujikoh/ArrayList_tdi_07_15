@@ -25,7 +25,15 @@ public class Apptest {
         int rs = al.get(0);
 
         assertEquals(100, rs);
-        assertEquals(1, al.size());
+    }
+    @Test
+    void add를_한번_할_때_마다_size가_증가() {
+        ArrayList al = new ArrayList();
+        al.add(100);
+        al.add(200);
+        al.add(300);
+
+        assertEquals(3, al.size());
     }
 
 }
