@@ -5,5 +5,8 @@ public class App {
 
 }
 class ArrayList {
-
+    int lastindex = -1;
+    int size(){
+        return 0;
+    }
 }
